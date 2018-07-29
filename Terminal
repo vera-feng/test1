@@ -1,0 +1,156 @@
+Last login: Fri Jul 27 19:13:06 on console
+MacBook-Pro-3:~ verayujiefeng$ git
+usage: git [--version] [--help] [-C <path>] [-c name=value]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone      Clone a repository into a new directory
+   init       Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add        Add file contents to the index
+   mv         Move or rename a file, a directory, or a symlink
+   reset      Reset current HEAD to the specified state
+   rm         Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect     Use binary search to find the commit that introduced a bug
+   grep       Print lines matching a pattern
+   log        Show commit logs
+   show       Show various types of objects
+   status     Show the working tree status
+
+grow, mark and tweak your common history
+   branch     List, create, or delete branches
+   checkout   Switch branches or restore working tree files
+   commit     Record changes to the repository
+   diff       Show changes between commits, commit and working tree, etc
+   merge      Join two or more development histories together
+   rebase     Reapply commits on top of another base tip
+   tag        Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch      Download objects and refs from another repository
+   pull       Fetch from and integrate with another repository or a local branch
+   push       Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+MacBook-Pro-3:~ verayujiefeng$ git info
+git: 'info' is not a git command. See 'git --help'.
+
+The most similar commands are
+	init
+	mailinfo
+MacBook-Pro-3:~ verayujiefeng$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+
+MacBook-Pro-3:~ verayujiefeng$ git config user.name
+MacBook-Pro-3:~ verayujiefeng$ git config --global user.name "vera-feng"
+MacBook-Pro-3:~ verayujiefeng$ git config --global user.email yf2423@columbia.edu
+MacBook-Pro-3:~ verayujiefeng$ git config user.name
+vera-feng
+MacBook-Pro-3:~ verayujiefeng$ cd documents
+MacBook-Pro-3:documents verayujiefeng$ cd 18git
+MacBook-Pro-3:18git verayujiefeng$ git clone https://github.com/vera-feng/test1
+Cloning into 'test1'...
+remote: Counting objects: 3, done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+MacBook-Pro-3:18git verayujiefeng$ ls
+test1
+MacBook-Pro-3:18git verayujiefeng$ cd test1
+MacBook-Pro-3:test1 verayujiefeng$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+MacBook-Pro-3:test1 verayujiefeng$ touch test.txt
+MacBook-Pro-3:test1 verayujiefeng$ nano test.txt
+MacBook-Pro-3:test1 verayujiefeng$ ls
+README.md	test.txt
+MacBook-Pro-3:test1 verayujiefeng$ git remote
+origin
+MacBook-Pro-3:test1 verayujiefeng$ git remote origin
+error: Unknown subcommand: origin
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+MacBook-Pro-3:test1 verayujiefeng$ git origin
+git: 'origin' is not a git command. See 'git --help'.
+MacBook-Pro-3:test1 verayujiefeng$ git commit -m "this is the first  add and commit"
+[master 48e2b44] this is the first  add and commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+MacBook-Pro-3:test1 verayujiefeng$ git push origin master
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/vera-feng/test1/'
+MacBook-Pro-3:test1 verayujiefeng$ git remote -v
+origin	https://github.com/vera-feng/test1 (fetch)
+origin	https://github.com/vera-feng/test1 (push)
+MacBook-Pro-3:test1 verayujiefeng$ git push -u origin master
+Username for 'https://github.com': vera-feng
+Password for 'https://vera-feng@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 300 bytes | 150.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/vera-feng/test1
+   29aea48..48e2b44  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+MacBook-Pro-3:test1 verayujiefeng$ 
